@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,78 +12,99 @@
     <meta name="theme-color" content="#5865F2">
 
     <style>
+
         body {
             margin: 0;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Arial, sans-serif;
             background: #111827;
             color: white;
+            font-family: Arial, sans-serif;
             text-align: center;
         }
 
-        .box {
+        .container {
             background: #1f2937;
-            padding: 40px;
-            border-radius: 15px;
-            max-width: 400px;
+            padding: 35px;
+            border-radius: 18px;
+            width: 90%;
+            max-width: 420px;
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 26px;
+        }
+
+        p {
+            opacity: 0.8;
         }
 
         button {
-            margin-top: 20px;
+            margin-top: 25px;
             padding: 15px 25px;
-            font-size: 18px;
             border: none;
-            border-radius: 10px;
-            cursor: pointer;
+            border-radius: 12px;
             background: #5865F2;
             color: white;
+            font-size: 17px;
+            cursor: pointer;
         }
 
         button:hover {
             opacity: 0.85;
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-<div class="box">
+<div class="container">
 
     <h1>🚀 Transporter Ready</h1>
 
     <p>
-        Discord Account Support Corporation Outlook Group
+        Discord Account Support Corporation<br>
+        Outlook Group Portal
     </p>
 
-    <button onclick="openGroup()">
+
+    <button onclick="openOutlookGroup()">
         📧 Open Outlook Group
     </button>
 
 </div>
 
 
+
 <script>
 
-function openGroup() {
+const OUTLOOK_GROUP_URL =
+"https://outlook.live.com/groups/groups.outlook.com/DiscordAccountSupportCorporation/mail";
 
-    window.location.href =
-    "https://outlook.live.com/groups/groups.outlook.com/DiscordAccountSupportCorporation/mail";
+
+function openOutlookGroup() {
+
+    window.location.href = OUTLOOK_GROUP_URL;
 
 }
 
 
-// Register PWA service worker
+// Register PWA Service Worker
 
 if ("serviceWorker" in navigator) {
 
-    navigator.serviceWorker.register("sw.js");
+    navigator.serviceWorker.register("sw.js")
+    .then(() => {
+        console.log("Transporter Service Worker Ready");
+    })
+    .catch(error => {
+        console.log("Service Worker Error:", error);
+    });
 
 }
 
@@ -90,4 +112,5 @@ if ("serviceWorker" in navigator) {
 
 
 </body>
+
 </html>
