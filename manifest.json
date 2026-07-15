@@ -1,0 +1,17 @@
+{
+    "name": "Discord Account Support Corporation Outlook Transporter",
+    "short_name": "DASC Transporter",
+    "description": "Direct transporter to the Discord Account Support Corporation Outlook Group",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#111827",
+    "theme_color": "#5865F2",
+
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
