@@ -24,15 +24,29 @@
         }
 
         .box {
-            padding: 30px;
+            background: #1f2937;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 400px;
         }
 
         h1 {
             font-size: 28px;
         }
 
-        p {
-            opacity: 0.8;
+        button {
+            margin-top: 20px;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #5865F2;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.85;
         }
     </style>
 </head>
@@ -40,27 +54,40 @@
 <body>
 
 <div class="box">
-    <h1>🚀 Transporter Online</h1>
-    <p>Connecting to Discord Account Support Corporation Outlook Group...</p>
+
+    <h1>🚀 Transporter Ready</h1>
+
+    <p>
+        Discord Account Support Corporation Outlook Group
+    </p>
+
+    <button onclick="openGroup()">
+        📧 Open Outlook Group
+    </button>
+
 </div>
 
 
 <script>
 
-const outlookGroup =
-"https://outlook.live.com/groups/groups.outlook.com/DiscordAccountSupportCorporation/mail";
+function openGroup() {
+
+    window.location.href =
+    "https://outlook.live.com/groups/groups.outlook.com/DiscordAccountSupportCorporation/mail";
+
+}
 
 
-// Redirect immediately
-window.location.replace(outlookGroup);
+// Register PWA service worker
 
-
-// Register service worker
 if ("serviceWorker" in navigator) {
+
     navigator.serviceWorker.register("sw.js");
+
 }
 
 </script>
+
 
 </body>
 </html>
