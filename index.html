@@ -4,23 +4,37 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DASC Outlook Group Transporter</title>
 
+
 <link rel="manifest" href="./manifest.json">
 
+
 <meta name="theme-color" content="#5865F2">
+
+
+<!-- iOS PWA Support -->
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="apple-mobile-web-app-title" content="DASC Transporter">
+
 
 
 <style>
 
 html, body {
 
-    margin: 0;
-    padding: 0;
     width: 100%;
     height: 100%;
+
+    margin: 0;
+    padding: 0;
 
 }
 
@@ -28,19 +42,23 @@ html, body {
 body {
 
     min-height: 100dvh;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     background: #111827;
+
     color: white;
 
     font-family: Arial, sans-serif;
+
     text-align: center;
 
-    overflow: hidden;
-
 }
+
 
 
 .container {
@@ -51,10 +69,20 @@ body {
 
     border-radius: 18px;
 
-    width: 90%;
-    max-width: 420px;
+    width: 95%;
+
+    max-width: 600px;
+
+    min-height: 60vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
 
 }
+
 
 
 h1 {
@@ -64,12 +92,15 @@ h1 {
 }
 
 
+
 p {
 
     opacity: 0.85;
+
     line-height: 1.5;
 
 }
+
 
 
 button {
@@ -93,11 +124,13 @@ button {
 }
 
 
+
 button:hover {
 
     opacity: 0.85;
 
 }
+
 
 
 #status {
@@ -113,10 +146,13 @@ button:hover {
 
 </style>
 
+
 </head>
 
 
+
 <body>
+
 
 
 <div class="container">
@@ -146,7 +182,9 @@ Outlook Group Recovery Portal
 <div id="status"></div>
 
 
+
 </div>
+
 
 
 
@@ -154,6 +192,7 @@ Outlook Group Recovery Portal
 
 
 const OUTLOOK_GROUP_URL =
+
 "https://outlook.live.com/groups/groups.outlook.com/DiscordAccountSupportCorporation/mail";
 
 
@@ -174,15 +213,19 @@ function openOutlookGroup() {
 
 
     const status =
+
     document.getElementById("status");
 
 
+
     const savedGroup =
+
     localStorage.getItem("outlookGroup");
 
 
 
     status.innerHTML =
+
     "🚀 Transporting to Outlook Group...";
 
 
@@ -214,19 +257,28 @@ if ("serviceWorker" in navigator) {
 
     .then(() => {
 
+
         console.log(
+
             "DASC Transporter Service Worker Ready"
+
         );
+
 
     })
 
 
     .catch(error => {
 
+
         console.log(
+
             "Service Worker Error:",
+
             error
+
         );
+
 
     });
 
@@ -235,6 +287,7 @@ if ("serviceWorker" in navigator) {
 
 
 </script>
+
 
 
 </body>
