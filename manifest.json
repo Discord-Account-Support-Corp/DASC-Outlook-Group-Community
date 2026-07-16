@@ -3,8 +3,8 @@
     "short_name": "DASC Transporter",
     "description": "Direct transporter to the Discord Account Support Corporation Outlook Group",
 
-    "start_url": "/DASC-Outlook-Group-Community/index.html",
-    "scope": "/DASC-Outlook-Group-Community/",
+    "start_url": "./index.html",
+    "scope": "./",
 
     "display": "standalone",
 
@@ -13,7 +13,7 @@
 
     "icons": [
         {
-            "src": "/DASC-Outlook-Group-Community/icon.png",
+            "src": "./icon.png",
             "sizes": "512x512",
             "type": "image/png"
         }
