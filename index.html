@@ -1,116 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Discord Account Support Corporation Transporter</title>
-
-    <link rel="manifest" href="manifest.json">
-
-    <meta name="theme-color" content="#5865F2">
-
-    <style>
-
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #111827;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        .container {
-            background: #1f2937;
-            padding: 35px;
-            border-radius: 18px;
-            width: 90%;
-            max-width: 420px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        h1 {
-            font-size: 26px;
-        }
-
-        p {
-            opacity: 0.85;
-            line-height: 1.5;
-        }
-
-        button {
-            margin-top: 25px;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 12px;
-            background: #5865F2;
-            color: white;
-            font-size: 17px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            opacity: 0.85;
-        }
-
-        #status {
-            margin-top: 15px;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-    </style>
-
-</head>
-
-
-<body>
-
-<div class="container">
-
-    <h1>🚀 Transporter Ready</h1>
-
-    <p>
-        Discord Account Support Corporation<br>
-        Outlook Group Portal
-    </p>
-
-
-    <button onclick="openOutlookGroup()">
-        📧 Open Outlook Group
-    </button>
-
-    <div id="status"></div>
-
-</div>
-
-
 <script>
 
 const OUTLOOK_GROUP_URL =
-"PASTE-YOUR-EXACT-OUTLOOK-GROUP-URL-HERE";
+"https://outlook.live.com/groups/YOUR-REAL-GROUP-URL-HERE";
+
+
+// Remember your destination
+
+localStorage.setItem(
+    "outlookGroup",
+    OUTLOOK_GROUP_URL
+);
 
 
 function openOutlookGroup() {
 
-    const status = document.getElementById("status");
+    const savedGroup =
+    localStorage.getItem("outlookGroup");
 
-    status.innerHTML = "🚀 Transporting to Outlook Group...";
 
-
-    setTimeout(() => {
-
-        window.location.href = OUTLOOK_GROUP_URL;
-
-    }, 300);
+    window.location.replace(
+        savedGroup || OUTLOOK_GROUP_URL
+    );
 
 }
-
 
 
 // Register PWA Service Worker
@@ -118,11 +30,13 @@ function openOutlookGroup() {
 if ("serviceWorker" in navigator) {
 
     navigator.serviceWorker.register("./sw.js")
+
     .then(() => {
 
         console.log("Transporter Service Worker Ready");
 
     })
+
     .catch(error => {
 
         console.log("Service Worker Error:", error);
@@ -132,8 +46,3 @@ if ("serviceWorker" in navigator) {
 }
 
 </script>
-
-
-</body>
-
-</html>
