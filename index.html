@@ -3,84 +3,115 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Discord Account Support Corporation Transporter</title>
+<title>DASC Outlook Group Transporter</title>
 
-    <link rel="manifest" href="./manifest.json">
+<link rel="manifest" href="./manifest.json">
 
-    <meta name="theme-color" content="#5865F2">
-
-
-    <style>
-
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #111827;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+<meta name="theme-color" content="#5865F2">
 
 
-        .container {
+<style>
 
-            background: #1f2937;
-            padding: 35px;
-            border-radius: 18px;
-            width: 90%;
-            max-width: 420px;
+html, body {
 
-        }
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 
-
-        h1 {
-            font-size: 26px;
-        }
+}
 
 
-        p {
-            opacity: 0.85;
-            line-height: 1.5;
-        }
+body {
+
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #111827;
+    color: white;
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+    overflow: hidden;
+
+}
 
 
-        button {
+.container {
 
-            margin-top: 25px;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 12px;
-            background: #5865F2;
-            color: white;
-            font-size: 17px;
-            cursor: pointer;
+    background: #1f2937;
 
-        }
+    padding: 35px;
 
+    border-radius: 18px;
 
-        button:hover {
+    width: 90%;
+    max-width: 420px;
 
-            opacity: 0.85;
-
-        }
+}
 
 
-        #status {
+h1 {
 
-            margin-top: 15px;
-            font-size: 14px;
-            opacity: 0.8;
+    font-size: 26px;
 
-        }
+}
 
 
-    </style>
+p {
+
+    opacity: 0.85;
+    line-height: 1.5;
+
+}
+
+
+button {
+
+    margin-top: 25px;
+
+    padding: 15px 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #5865F2;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+}
+
+
+button:hover {
+
+    opacity: 0.85;
+
+}
+
+
+#status {
+
+    margin-top: 15px;
+
+    opacity: 0.8;
+
+    font-size: 14px;
+
+}
+
+
+</style>
 
 </head>
 
@@ -91,21 +122,28 @@
 <div class="container">
 
 
-    <h1>🚀 Transporter Ready</h1>
+<h1>🚀 DASC Transporter</h1>
 
 
-    <p>
-        Discord Account Support Corporation<br>
-        Outlook Group Portal
-    </p>
+<p>
+
+Discord Account Support Corporation<br>
+
+Outlook Group Recovery Portal
+
+</p>
 
 
-    <button onclick="openOutlookGroup()">
-        📧 Open Outlook Group
-    </button>
+
+<button onclick="openOutlookGroup()">
+
+📧 Open Outlook Group
+
+</button>
 
 
-    <div id="status"></div>
+
+<div id="status"></div>
 
 
 </div>
@@ -123,8 +161,11 @@ const OUTLOOK_GROUP_URL =
 // Remember destination
 
 localStorage.setItem(
+
     "outlookGroup",
+
     OUTLOOK_GROUP_URL
+
 );
 
 
@@ -150,7 +191,9 @@ function openOutlookGroup() {
 
 
         window.location.replace(
+
             savedGroup || OUTLOOK_GROUP_URL
+
         );
 
 
@@ -172,7 +215,7 @@ if ("serviceWorker" in navigator) {
     .then(() => {
 
         console.log(
-            "Transporter Service Worker Ready"
+            "DASC Transporter Service Worker Ready"
         );
 
     })
