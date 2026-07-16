@@ -1,4 +1,4 @@
-const CACHE_NAME = "dasc-transporter-v3";
+const CACHE_NAME = "dasc-transporter-v4";
 
 const FILES = [
     "./",
@@ -8,7 +8,7 @@ const FILES = [
 ];
 
 
-// Install new service worker
+// Install service worker
 
 self.addEventListener("install", event => {
 
@@ -28,7 +28,7 @@ self.addEventListener("install", event => {
 });
 
 
-// Remove old caches
+// Remove previous caches
 
 self.addEventListener("activate", event => {
 
