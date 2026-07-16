@@ -12,7 +12,7 @@ self.addEventListener("install", event => {
 
     event.waitUntil(
         caches.open(CACHE_NAME)
-        .then(cache => cache.addAll(FILES))
+            .then(cache => cache.addAll(FILES))
     );
 
     self.skipWaiting();
@@ -28,10 +28,10 @@ self.addEventListener("activate", event => {
 
             return Promise.all(
 
-                cacheNames.map(cache => {
+                cacheNames.map(cacheName => {
 
-                    if (cache !== CACHE_NAME) {
-                        return caches.delete(cache);
+                    if (cacheName !== CACHE_NAME) {
+                        return caches.delete(cacheName);
                     }
 
                 })
@@ -52,16 +52,16 @@ self.addEventListener("fetch", event => {
     event.respondWith(
 
         fetch(event.request)
-        .then(response => {
+            .then(response => {
 
-            return response;
+                return response;
 
-        })
-        .catch(() => {
+            })
+            .catch(() => {
 
-            return caches.match(event.request);
+                return caches.match(event.request);
 
-        })
+            })
 
     );
 
