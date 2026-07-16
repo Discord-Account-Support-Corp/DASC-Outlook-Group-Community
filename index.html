@@ -39,7 +39,7 @@
         }
 
         p {
-            opacity: 0.8;
+            opacity: 0.85;
             line-height: 1.5;
         }
 
@@ -58,14 +58,10 @@
             opacity: 0.85;
         }
 
-        button:disabled {
-            opacity: 0.6;
-            cursor: wait;
-        }
-
         #status {
             margin-top: 15px;
             font-size: 14px;
+            opacity: 0.8;
         }
 
     </style>
@@ -85,7 +81,7 @@
     </p>
 
 
-    <button id="openButton" onclick="openOutlookGroup()">
+    <button onclick="openOutlookGroup()">
         📧 Open Outlook Group
     </button>
 
@@ -94,30 +90,24 @@
 </div>
 
 
-
 <script>
 
 const OUTLOOK_GROUP_URL =
-"https://outlook.live.com/groups/DiscordAccountSupportCorporation/mail";
+"PASTE-YOUR-EXACT-OUTLOOK-GROUP-URL-HERE";
 
 
 function openOutlookGroup() {
 
-    const button = document.getElementById("openButton");
     const status = document.getElementById("status");
 
-
-    button.disabled = true;
-
-    status.innerHTML =
-    "🚀 Transporting to Outlook Group...";
+    status.innerHTML = "🚀 Transporting to Outlook Group...";
 
 
     setTimeout(() => {
 
         window.location.href = OUTLOOK_GROUP_URL;
 
-    }, 500);
+    }, 300);
 
 }
 
@@ -127,20 +117,15 @@ function openOutlookGroup() {
 
 if ("serviceWorker" in navigator) {
 
-    navigator.serviceWorker.register("sw.js")
+    navigator.serviceWorker.register("./sw.js")
     .then(() => {
 
-        console.log(
-        "Transporter Service Worker Ready"
-        );
+        console.log("Transporter Service Worker Ready");
 
     })
     .catch(error => {
 
-        console.log(
-        "Service Worker Error:",
-        error
-        );
+        console.log("Service Worker Error:", error);
 
     });
 
