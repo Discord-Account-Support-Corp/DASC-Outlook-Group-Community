@@ -1,10 +1,10 @@
-const CACHE_NAME = "dasc-transporter-v1";
+const CACHE_NAME = "dasc-transporter-v2";
 
 const FILES = [
-    "/",
-    "/index.html",
-    "/manifest.json",
-    "/icon.png"
+    "./",
+    "./index.html",
+    "./manifest.json",
+    "./icon.png"
 ];
 
 
@@ -15,14 +15,54 @@ self.addEventListener("install", event => {
         .then(cache => cache.addAll(FILES))
     );
 
+    self.skipWaiting();
+
+});
+
+
+self.addEventListener("activate", event => {
+
+    event.waitUntil(
+
+        caches.keys().then(cacheNames => {
+
+            return Promise.all(
+
+                cacheNames.map(cache => {
+
+                    if (cache !== CACHE_NAME) {
+                        return caches.delete(cache);
+                    }
+
+                })
+
+            );
+
+        })
+
+    );
+
+    self.clients.claim();
+
 });
 
 
 self.addEventListener("fetch", event => {
 
     event.respondWith(
-        caches.match(event.request)
-        .then(response => response || fetch(event.request))
+
+        fetch(event.request)
+        .then(response => {
+
+            return response;
+
+        })
+        .catch(() => {
+
+            return caches.match(event.request);
+
+        })
+
     );
 
 });
