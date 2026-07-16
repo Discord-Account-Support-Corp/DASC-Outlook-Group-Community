@@ -9,285 +9,60 @@
 
 <title>DASC Outlook Group Transporter</title>
 
-
 <link rel="manifest" href="./manifest.json">
-
 
 <meta name="theme-color" content="#5865F2">
 
-
-<!-- iOS PWA Support -->
-
 <meta name="apple-mobile-web-app-capable" content="yes">
-
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
 <meta name="apple-mobile-web-app-title" content="DASC Transporter">
 
-
-
-<style>
-
-html, body {
-
-    width: 100%;
-    height: 100%;
-
-    margin: 0;
-    padding: 0;
-
-}
-
-
-body {
-
-    min-height: 100dvh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    background: #111827;
-
-    color: white;
-
-    font-family: Arial, sans-serif;
-
-    text-align: center;
-
-}
-
-
-
-.container {
-
-    background: #1f2937;
-
-    padding: 35px;
-
-    border-radius: 18px;
-
-    width: 95%;
-
-    max-width: 600px;
-
-    min-height: 60vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-}
-
-
-
-h1 {
-
-    font-size: 26px;
-
-}
-
-
-
-p {
-
-    opacity: 0.85;
-
-    line-height: 1.5;
-
-}
-
-
-
-button {
-
-    margin-top: 25px;
-
-    padding: 15px 25px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background: #5865F2;
-
-    color: white;
-
-    font-size: 17px;
-
-    cursor: pointer;
-
-}
-
-
-
-button:hover {
-
-    opacity: 0.85;
-
-}
-
-
-
-#status {
-
-    margin-top: 15px;
-
-    opacity: 0.8;
-
-    font-size: 14px;
-
-}
-
-
-</style>
-
-
 </head>
-
 
 
 <body>
 
 
-
-<div class="container">
-
-
-<h1>🚀 DASC Transporter</h1>
-
-
 <p>
-
-Discord Account Support Corporation<br>
-
-Outlook Group Recovery Portal
-
+🚀 Opening Discord Account Support Corporation Outlook Group...
 </p>
-
-
-
-<button onclick="openOutlookGroup()">
-
-📧 Open Outlook Group
-
-</button>
-
-
-
-<div id="status"></div>
-
-
-
-</div>
-
-
 
 
 <script>
 
-
 const OUTLOOK_GROUP_URL =
-
 "https://outlook.live.com/groups/groups.outlook.com/DiscordAccountSupportCorporation/mail";
 
 
+// Small delay gives the PWA time to load correctly
 
-// Remember destination
+setTimeout(() => {
 
-localStorage.setItem(
+    window.location.replace(OUTLOOK_GROUP_URL);
 
-    "outlookGroup",
-
-    OUTLOOK_GROUP_URL
-
-);
+}, 100);
 
 
-
-function openOutlookGroup() {
-
-
-    const status =
-
-    document.getElementById("status");
-
-
-
-    const savedGroup =
-
-    localStorage.getItem("outlookGroup");
-
-
-
-    status.innerHTML =
-
-    "🚀 Transporting to Outlook Group...";
-
-
-
-    setTimeout(() => {
-
-
-        window.location.replace(
-
-            savedGroup || OUTLOOK_GROUP_URL
-
-        );
-
-
-    }, 300);
-
-
-}
-
-
-
-// Register Service Worker
 
 if ("serviceWorker" in navigator) {
 
-
     navigator.serviceWorker.register("./sw.js")
-
 
     .then(() => {
 
-
-        console.log(
-
-            "DASC Transporter Service Worker Ready"
-
-        );
-
+        console.log("DASC Transporter Service Worker Ready");
 
     })
 
-
     .catch(error => {
 
-
-        console.log(
-
-            "Service Worker Error:",
-
-            error
-
-        );
-
+        console.log("Service Worker Error:", error);
 
     });
 
-
 }
 
-
 </script>
-
 
 
 </body>
