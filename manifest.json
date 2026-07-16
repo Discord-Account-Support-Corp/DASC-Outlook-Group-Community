@@ -1,19 +1,21 @@
 {
+    "id": "/DASC-Outlook-Group-Community/",
     "name": "Discord Account Support Corporation Outlook Transporter",
     "short_name": "DASC Transporter",
     "description": "Direct transporter to the Discord Account Support Corporation Outlook Group",
 
-    "start_url": "./index.html",
-    "scope": "./",
+    "start_url": "/DASC-Outlook-Group-Community/index.html",
+    "scope": "/DASC-Outlook-Group-Community/",
 
     "display": "standalone",
+    "orientation": "portrait",
 
     "background_color": "#111827",
     "theme_color": "#5865F2",
 
     "icons": [
         {
-            "src": "./icon.png",
+            "src": "/DASC-Outlook-Group-Community/icon.png",
             "sizes": "512x512",
             "type": "image/png"
         }
